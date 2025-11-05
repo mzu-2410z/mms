@@ -11,6 +11,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -267,7 +268,6 @@
             height: auto; 
             max-height: 2.5rem; /* This sets the visible size of the logo */
             transition: opacity 0.3s ease; 
-
             /* Critical: Apply absolute positioning and centering to BOTH */
             position: absolute; 
             top: 50%; /* Start 50% down from the top */
@@ -944,6 +944,7 @@
         .footer-links a { 
             display: block; 
             margin-bottom: 0.5rem; 
+            font-family: "Roboto";
             color: var(--color-text-body);
             transition: color var(--transition-speed) ease;
         }
@@ -959,6 +960,7 @@
             text-align: center; 
             border-top: 1px solid rgba(163, 230, 53, 0.1);
             padding-top: 2rem; 
+            font-family: 'Roboto', sans-serif;
             font-size: 0.9rem; 
             color: var(--color-text-muted); 
         }
@@ -1382,7 +1384,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <h4>MindMotionStudio</h4>
+                    <a href="index.html" class="logo">
+                        <img src="assets/full-logo.png" alt="MindMotionStudio Default Logo" class="logo-image logo-default">
+                    </a>
                     <p>Creative design and editing agency dedicated to crafting exceptional digital experiences.</p>
                 </div>
                 <div class="footer-links">
@@ -1395,7 +1399,7 @@
                 <div class="footer-contact">
                     <h4>Get In Touch</h4>
                     <p>hello@mindmotionstudio.com</p>
-                    <p>+1 (555) 123-4567</p>
+                    <p style="font-family: 'Roboto', sans-serif;">+1 (555) 123-4567</p> 
                 </div>
                 <div class="footer-social">
                     <h4>Follow Us</h4>
@@ -1555,7 +1559,7 @@
                 
                 // Duplicate the array to ensure continuous scrolling without a gap
                 // Repeat 3 times to make sure there's enough content for the scroll effect to be smooth
-                [...testimonials, ...testimonials, ...testimonials].forEach((testimonial) => {
+                [...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials].forEach((testimonial) => {
                     column.innerHTML += createTestimonialCard(testimonial);
                 });
             };
