@@ -143,6 +143,7 @@
             margin: 0 1.5rem;
             font-weight: 500;
             color: var(--color-text-body);
+            font-size: 1.3rem;
             text-decoration: none;
             transition: color var(--transition-speed) ease;
         }
@@ -170,6 +171,40 @@
             background-color: transparent;
             color: var(--color-primary);
             box-shadow: 0 0 25px rgba(163, 230, 53, 0.4);
+        }
+
+        /* Update the .logo container */
+        /* Update the .logo container */
+        .logo {
+            /* Critical: Set position to relative for absolute children */
+            position: relative; 
+            /* Set a fixed height for the container based on the largest logo size */
+            height: 3rem; /* Adjusted based on the max-height of 2.5rem + padding/space */
+            width: 300px; /* Adjust this width based on your logo image width */
+            display: block; /* Use block to occupy the defined width/height */
+            /* Remove original text styling if it's no longer used */
+            text-decoration: none;
+            overflow: hidden; /* Prevent any part of the image from spilling out */
+        }
+
+        /* Styling applied to BOTH logo images for identical positioning */
+        .logo-image {
+            height: auto; 
+            max-height: 2.5rem; /* This sets the visible size of the logo */
+            transition: opacity 0.3s ease; 
+
+            /* Critical: Apply absolute positioning and centering to BOTH */
+            position: absolute; 
+            top: 50%; /* Start 50% down from the top */
+            left: 0; 
+            /* Add padding to the left if needed, or adjust the left property for centering: */
+            /* left: 50%; transform: translate(-50%, -50%); - use this if you want it centered in the container width */
+            transform: translateY(-50%); /* Pull it back up by half its height */
+        }
+
+        /* Initial State: Show Default, Hide Scrolled */
+        .logo-default {
+            opacity: 1;
         }
 
         /* Mobile Menu */
@@ -634,14 +669,14 @@
     <header class="main-header" id="main-header">
         <div class="header-content">
             <a href="index.html" class="logo">
-                <span class="accent">Mind</span>MotionStudio
+                <img src="assets/full-logo.png" alt="MindMotionStudio Default Logo" class="logo-image logo-default">
             </a>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="portfolio.html">Portfolio</a>
             </nav>
-            <a href="contact.html" class="cta-button">
+            <a href="contact.html" class="cta-button" class="active">
                 Get Started
             </a>
             <div class="hamburger-menu" id="hamburger-menu">
@@ -650,7 +685,6 @@
         </div>
     </header>
 
-    <!-- Mobile Navigation -->
     <nav class="mobile-nav" id="mobile-nav">
         <div class="close-icon" id="close-icon">
             <i class="fas fa-times"></i>
